@@ -34,5 +34,15 @@ public class HandBag extends Bag{
          *
          * To call a method defined in a parent, you use super.method_name(...)
          */
+        super.increaseCapacity(1);
+
+    }
+
+    public String getColor() {
+        return this.getColour();
+    }
+
+    public void setColor(String colour) {
+        this.setColour(colour);
     }
 }
