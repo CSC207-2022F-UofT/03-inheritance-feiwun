@@ -6,6 +6,7 @@
  */
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Bag {
     /*
@@ -15,10 +16,10 @@ public abstract class Bag {
      *       - an int named capacity
      *       - an array of Strings named contents
      */
-    private String colour;
-    private int numberOfContents;
-    private int capacity;
-    private ArrayList<String> contents;
+    public String colour;
+    public int numberOfContents;
+    public int capacity;
+    public ArrayList<String> contents;
 
 
     /*
@@ -50,7 +51,7 @@ public abstract class Bag {
     }
 
     public int getNumberOfContents() {
-        return numberOfContents;
+        return this.numberOfContents;
     }
 
     public int getCapacity() {
@@ -78,9 +79,8 @@ public abstract class Bag {
      */
 
     public void addItem(String bagItem) {
-        if (capacity + 1 <= contents.size()) {
+        if (capacity != 0) {
             contents.add(bagItem);
-            --capacity;
             ++numberOfContents;
         }
     }
@@ -97,10 +97,10 @@ public abstract class Bag {
      */
 
     public String popItem() {
-        --capacity;
         --numberOfContents;
-        contents.remove(contents.get(contents.size() - 1));
-        return contents.get(contents.size() - 1);
+        String removed = contents.get(capacity - 3);
+        contents.remove(removed);
+        return removed;
     }
 
     /**
