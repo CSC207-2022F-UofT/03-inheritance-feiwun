@@ -15,12 +15,18 @@ public class HandBag extends Bag{
      * @param color
      * @param capacity
      */
-    public HandBag(String color, int capacity) {
+
+    private String colour;
+    private int capacity;
+
+    public HandBag(String colourH, int capacityH) {
         /**
          * This is how we call the parent's constructor
          * The Python equivalent is super().__init__(...)
          */
-        super(color, capacity);
+        super(colourH, capacityH);
+        this.colour = colourH;
+        this.capacity = capacityH;
     }
 
     /**
@@ -39,10 +45,10 @@ public class HandBag extends Bag{
     }
 
     public String getColor() {
-        return this.getColour();
+        return this.colour;
     }
 
-    public void setColor(String colour) {
-        this.setColour(colour);
+    public void setColor(String colourSet) {
+        this.colour = colourSet;
     }
 }
